@@ -73,6 +73,7 @@ void searchSlovo(map<string, string>& dict)
     {
         system("cls");
         system("color 0C");
+        cout << "слово не найдено\n";
     }
 }
 
@@ -94,7 +95,8 @@ int main()
     dict.insert(make_pair("parrot", "попугай"));
 
     int vibor;
-    do
+
+    while (true)
     {
         cout << "\nменю:\n";
         cout << "1. добавить слово\n";
@@ -109,30 +111,28 @@ int main()
         switch (vibor)
         {
         case 1:
-                addSlovo(dict);
+            addSlovo(dict);
             break;
         case 2:
-                deleteSlovo(dict);
+            deleteSlovo(dict);
             break;
         case 3:
-                searchSlovo(dict);
+            searchSlovo(dict);
             break;
         case 4:
-                saveSlovo(dict);
+            saveSlovo(dict);
             break;
         case 5:
-                displaySlovar(dict);
+            displaySlovar(dict);
             break;
         case 0:
             cout << "выход\n";
-            break;
+            return 0;
         default:
             cout << "ошибка\n";
         }
     }
-    while (vibor != 0);
 
     return 0;
-
-
 }
+
